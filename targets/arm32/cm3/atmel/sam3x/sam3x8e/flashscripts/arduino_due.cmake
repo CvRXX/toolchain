@@ -9,8 +9,8 @@ set(DEVICE_LOCATION
 )
 
 if(bossac)
-        add_custom_target(flash DEPENDS ${PROJECT_NAME}.bin
-                COMMAND ${bossac} -p ${DEVICE_LOCATION} -U false -e -w -v -b ${PROJECT_NAME}.bin -R
+        add_custom_target(flash DEPENDS ${PROJECT_NAME}_sam3x8e.bin
+		COMMAND ${bossac} -p ${DEVICE_LOCATION} -U=false -e -w -v -b ${PROJECT_NAME}_sam3x8e.bin
                 # ^ erease -> write -> verify -> boot -> reset
         )
 endif()
